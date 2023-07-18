@@ -94,6 +94,16 @@ impl AvailabilityTelemetry {
     pub fn measurements_mut(&mut self) -> &mut Measurements {
         &mut self.measurements
     }
+
+    /// Returns a mutable reference to location.
+    pub fn location_mut(&mut self) -> &mut Option<String> {
+        &mut self.run_location
+    }
+
+    /// Returns the location to submit with the telemetry item.
+    pub fn location(&mut self) -> &Option<String> {
+        &self.run_location
+    }
 }
 
 impl Telemetry for AvailabilityTelemetry {
